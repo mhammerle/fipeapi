@@ -1,0 +1,43 @@
+mat-card {
+  /* display: flex; */
+  margin: auto;
+  width: 90%;
+  margin-top: 1rem;
+}
+
+mat-form-field {
+  margin-right: 1rem;
+}
+
+.centered {
+  justify-content: center;
+  text-align: center;
+}
+
+.alert {
+  color: red;
+}
+
+mat-card-footer {
+  padding: 1rem;
+  text-align: right;
+}
+
+
+
+mat-card-content {
+  text-align: center
+}
+
+mat-card-content span {
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2px solid black;
+  margin-top: 2px solid black;
+  font-size: 3rem;
+}
+
+mat-spinner {
+  margin: 0 auto;
+}
+

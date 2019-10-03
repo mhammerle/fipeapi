@@ -1,0 +1,20 @@
+<mat-card *ngIf="show">
+    <mat-card-header>
+        <mat-card-title>
+            {{ fipeValueList.marca }} - {{ fipeValueList.name }} ( {{ fipeValueList.ano_modelo }} ) ( {{ fipeValueList.combustivel }} )
+        </mat-card-title>
+        <mat-card-subtitle>
+          Código Fipe: {{ fipeValueList.fipe_codigo }}
+        </mat-card-subtitle>
+     </mat-card-header>
+    <mat-card-content>
+       <span>Valor Fipe: {{ fipeValueList.preco }}</span>
+    </mat-card-content>
+    <mat-card-footer>
+        <span>Referencia: {{ fipeValueList.referencia }}</span>
+    </mat-card-footer>
+  </mat-card>
+
+  <mat-card class="centered" *ngIf="isLoading">
+      <mat-spinner class="centered"></mat-spinner>
+  </mat-card>

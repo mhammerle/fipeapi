@@ -1,0 +1,123 @@
+<mat-card class="card">
+  <div class="center">
+      <mat-form-field class="brand-wrapper">
+          <mat-label>Marca</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let brand of brandList" [value]="brand">
+              {{ brand }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="brand-wrapper">
+            <mat-label>Modelo</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let model of modelList" [value]="model">
+                {{ model }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <button mat-raised-button color="primary">Buscar</button>
+          <button mat-raised-button color="accent" (click)="openExpansion()">Abrir Tudo</button>
+          <button mat-raised-button color="warn" (click)="closeExpansion()">Fechar Tudo</button>
+  </div>
+</mat-card>
+
+<mat-expansion-panel class="card" [(expanded)]="openAll">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+        <h1>POLÍTICA</h1>
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+  <div fxLayout="column" fxLayoutAlign="center center">
+      <!-- politica de aquisição -->
+      <div fxFlex="100%" fxLayout="row wrap" fxLayoutAlign="center center" fxLayout.xs="column">
+          <span fxFlex="35%" class="block">Política de aquisição</span>
+          <span fxFlex="15%" class="block">COMPRA</span>
+          <span fxFlex="15%" class="block">LEASING</span>
+          <span fxFlex="15%" class="block">LOCAÇÃO (Casco)</span>
+          <span fxFlex="15%" class="block">LOCAÇÃO (Frotista)</span>
+      </div>
+      <div fxFlex="100%" fxLayout="row wrap" fxLayoutAlign="center center" fxLayout.xs="column">
+          <span fxFlex="35%" class="value">Utilização</span>
+          <span fxFlex="15%" class="value">EXECUTIVO</span>
+          <span fxFlex="15%" class="value">EXECUTIVO</span>
+          <span fxFlex="15%" class="value">EXECUTIVO</span>
+          <span fxFlex="15%" class="value">EXECUTIVO</span>
+      </div>
+    </div>
+</mat-expansion-panel>
+
+<mat-expansion-panel class="card" [(expanded)]="openAll" >
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+          <h1>ESPECIFICAÇÕES DO VEÍCULO</h1>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <div fxLayout="column" fxLayoutAlign="center center">
+        <!-- politica de aquisição -->
+        <div fxFlex="100%" fxLayout="row wrap" fxLayoutAlign="center center" fxLayout.xs="column">
+            <span fxFlex="35%" class="block">POLÍTICA DE AQUISIÇÃO</span>
+            <span fxFlex="15%" class="block">COMPRA</span>
+            <span fxFlex="15%" class="block">LEASING</span>
+            <span fxFlex="15%" class="block">LOCAÇÃO (Casco)</span>
+            <span fxFlex="15%" class="block">LOCAÇÃO (Frotista)</span>
+        </div>
+        <div fxFlex="100%" fxLayout="row wrap" fxLayoutAlign="center center" fxLayout.xs="column">
+            <span fxFlex="35%" class="value">FABRICANTE</span>
+            <span fxFlex="15%" class="value">TOYOTA</span>
+            <span fxFlex="15%" class="value">TOYOTA</span>
+            <span fxFlex="15%" class="value">TOYOTA</span>
+            <span fxFlex="15%" class="value">TOYOTA</span>
+        </div>
+        <div fxFlex="100%" fxLayout="row wrap" fxLayoutAlign="center center" fxLayout.xs="column">
+            <span fxFlex="35%" class="value">MARCA</span>
+            <span fxFlex="15%" class="value">TOYOTA</span>
+            <span fxFlex="15%" class="value">TOYOTA</span>
+            <span fxFlex="15%" class="value">TOYOTA</span>
+            <span fxFlex="15%" class="value">TOYOTA</span>
+        </div>
+        <div fxFlex="100%" fxLayout="row wrap" fxLayoutAlign="center center" fxLayout.xs="column">
+            <span fxFlex="35%" class="value">MODELO</span>
+            <span fxFlex="15%" class="value">COROLLA</span>
+            <span fxFlex="15%" class="value">COROLLA</span>
+            <span fxFlex="15%" class="value">COROLLA</span>
+            <span fxFlex="15%" class="value">COROLLA</span>
+        </div>
+        <div fxFlex="100%" fxLayout="row wrap" fxLayoutAlign="center center" fxLayout.xs="column">
+            <span fxFlex="35%" class="value">VERSÃO</span>
+            <span fxFlex="15%" class="value">GLI AT</span>
+            <span fxFlex="15%" class="value">GLI AT</span>
+            <span fxFlex="15%" class="value">GLI AT</span>
+            <span fxFlex="15%" class="value">GLI AT</span>
+        </div>
+        <div fxFlex="100%" fxLayout="row wrap" fxLayoutAlign="center center" fxLayout.xs="column">
+            <span fxFlex="35%" class="value">MOTOR</span>
+            <span fxFlex="15%" class="value">1.8</span>
+            <span fxFlex="15%" class="value">1.8</span>
+            <span fxFlex="15%" class="value">1.8</span>
+            <span fxFlex="15%" class="value">1.8</span>
+        </div>
+        <div fxFlex="100%" fxLayout="row wrap" fxLayoutAlign="center center" fxLayout.xs="column">
+            <span fxFlex="35%" class="value">TIPO DE COMBUSTÍVEL</span>
+            <span fxFlex="15%" class="value">FLEX</span>
+            <span fxFlex="15%" class="value">FLEX</span>
+            <span fxFlex="15%" class="value">FLEX</span>
+            <span fxFlex="15%" class="value">FLEX</span>
+        </div>
+        <div fxFlex="100%" fxLayout="row wrap" fxLayoutAlign="center center" fxLayout.xs="column">
+            <span fxFlex="35%" class="value">EMISSÕES DE CO2 POR KM</span>
+            <span fxFlex="15%" class="value">147,0 (G) / 141,7 (E)</span>
+            <span fxFlex="15%" class="value">147,0 (G) / 141,7 (E)</span>
+            <span fxFlex="15%" class="value">147,0 (G) / 141,7 (E)</span>
+            <span fxFlex="15%" class="value">147,0 (G) / 141,7 (E)</span>
+        </div>
+        <div fxFlex="100%" fxLayout="row wrap" fxLayoutAlign="center center" fxLayout.xs="column">
+            <span fxFlex="35%" class="value">CONSUMO DE COMBUSTÍVEL (URBANO) (KM/L)</span>
+            <span fxFlex="15%" class="value">11,4(G) / 7,8(E)</span>
+            <span fxFlex="15%" class="value">11,4(G) / 7,8(E)</span>
+            <span fxFlex="15%" class="value">11,4(G) / 7,8(E)</span>
+            <span fxFlex="15%" class="value">11,4(G) / 7,8(E)</span>
+        </div>
+      </div>
+  </mat-expansion-panel>

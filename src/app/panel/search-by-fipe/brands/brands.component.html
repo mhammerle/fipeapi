@@ -1,0 +1,8 @@
+<mat-form-field class="brand-wrapper">
+  <mat-label>Marca</mat-label>
+  <mat-select [(ngModel)]="selectedBrandId" (selectionChange)="selectModel()">
+    <mat-option *ngFor="let brand of brandsList" [value]="brand.id">
+      {{ brand.name }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>

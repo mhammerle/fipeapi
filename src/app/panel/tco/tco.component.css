@@ -1,0 +1,113 @@
+.card {
+  margin: auto;
+  width: 90%;
+  margin-top: 1rem;
+}
+
+.block {
+  width: 20%;
+  text-align: center;
+  box-shadow: 5px 5px 2.5px 0px rgba(0,0,0,0.45);
+  margin: 0.25rem;
+  height: 10rem;
+  width: 20rem;
+  border-radius: 1rem;
+  color: white;
+}
+
+.green {
+  background-color: forestgreen;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.block h1 {
+  margin-bottom: 0;
+}
+
+.block h3 {
+  margin-top: 0;
+}
+
+mat-form-field {
+  margin-right: 1rem;
+}
+
+.centered {
+  justify-content: center;
+  text-align: center;
+}
+
+.alert {
+  color: red;
+}
+
+.dark {
+  color: black;
+}
+
+hr {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+button h1 {
+  font-size: 42px;
+}
+
+button h3 {
+  font-size: 20px;
+}
+
+mat-card-header {
+  background-color: #4285F4;
+  border-radius: 1rem;
+  color: white;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 32px;
+  text-align: center;
+  margin: 0.5rem;
+}
+
+.content {
+  font-size: 32px;
+  text-align: center;
+  margin: 0.5rem;
+}
+
+.total {
+  color: green;
+  font-weight: 900;
+}
+
+.last-os {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  background-color: blue;
+  color: white;
+  border-radius: 2rem;
+  padding: 1rem;
+}
+
+.tco-content {
+  background-color: rgb(231, 223, 223);
+}
+
+
+h1 {
+  font-size: 2rem;
+}
+
+.coments {
+  font-size: 2rem;
+}
+
+li {
+  margin-bottom: 1rem;
+  text-align: justify;
+}

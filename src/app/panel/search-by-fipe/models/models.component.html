@@ -1,0 +1,8 @@
+<mat-form-field class="model-wrapper">
+  <mat-label>Modelo</mat-label>
+  <mat-select [disabled]="!show" [(ngModel)]="selectedModelId" (selectionChange)="selectYear()">
+    <mat-option *ngFor="let model of modelsList" [value]="model.id" >
+      {{ model.name }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>

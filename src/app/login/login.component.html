@@ -1,0 +1,24 @@
+<div class="container"
+     [ngStyle]="{'background-image': 'url(../../assets/backgrounds/' + path + '.jpg)'}">
+  <div class="login">
+    <header>
+
+    </header>
+    <div class="body">
+      <mat-form-field>
+        <input matInput type="email" name="email" [(ngModel)]="email" placeholder="E-mail">
+      </mat-form-field>
+      <mat-form-field>
+          <input matInput type="password" name="password" [(ngModel)]="password" placeholder="Senha">
+      </mat-form-field>
+      <button *ngIf="!entering" mat-stroked-button (click)="login()">Acessar</button>
+      <button *ngIf="entering" mat-stroked-button><mat-progress-bar mode="indeterminate"
+                                                                    color="accent">
+                                                  </mat-progress-bar></button>
+    </div>
+    <footer>
+
+    </footer>
+  </div>
+</div>
+

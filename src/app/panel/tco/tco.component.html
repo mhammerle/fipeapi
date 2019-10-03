@@ -1,0 +1,138 @@
+<mat-card  class="card centered">
+    <form>
+        <mat-form-field>
+          <input matInput placeholder="Placa" maxlength="7" #plate>
+        </mat-form-field>
+      <button mat-raised-button color="primary" (click)="showDetails()">Buscar</button>
+    </form>
+</mat-card>
+
+<mat-card class="card tco-content" *ngIf="show">
+    <div fxLayout="column" fxLayoutAlign="center center">
+      <div fxFlex="100%" fxLayout="row wrap" fxLayoutAlign="center center" fxLayout.xs="column">
+        <button fxFlex="19%" fxFlex.lt-lg="45%" class="block blue"><h1>{{ dataTest.placa }}</h1><h3>Placa</h3></button>
+        <button fxFlex="19%" fxFlex.lt-lg="45%" class="block blue"><h1>{{ dataTest.marca }}</h1><h3>Marca</h3></button>
+        <button fxFlex="19%" fxFlex.lt-lg="45%" class="block blue"><h1>{{ dataTest.modelo }}</h1><h3>Modelo</h3></button>
+        <button fxFlex="19%" fxFlex.lt-lg="45%" class="block blue"><h1>{{ dataTest.ano_fabricacao }} / {{ dataTest.ano_modelo }}</h1><h3>Ano/ Modelo</h3></button>
+        <button fxFlex="19%" fxFlex.lt-lg="45%" class="block blue"><h1>{{ dataTest.km_atual | number }}</h1><h3>Km Rodado</h3></button>
+        <button fxFlex="19%" fxFlex.lt-lg="45%" class="block green"><h1>{{ dataTest.idf | number:'1.2-2'}}</h1><h3>IDF</h3></button>
+        <button fxFlex="19%" fxFlex.lt-lg="45%" class="block green"><h1>{{ manutTotal }}</h1><h3>Gasto com Manutenção</h3></button>
+        <button fxFlex="19%" fxFlex.lt-lg="45%" class="block green"><h1>{{ dataTest.valor_mercado }}</h1><h3>Valor de Mercado</h3></button>
+        <button fxFlex="19%" fxFlex.lt-lg="45%" class="block green"><h1>{{ pontoIdealdeTroca }}</h1><h3>Ponto Ideal de Troca</h3></button>
+        <button fxFlex="19%" fxFlex.lt-lg="45%" class="block green dark"><h1>{{ recomendacao }}</h1><h3>Recomendação Tfleet</h3></button>
+      </div>
+    </div>
+    <hr>
+
+    <mat-card class="card">
+      <mat-card-header>
+          <mat-card-title>
+              <h2>Dados do Veículo</h2>
+            </mat-card-title>
+      </mat-card-header>
+      <div fxLayout="column" fxLayoutAlign="center center">
+        <div fxFlex="100%" fxLayout="row wrap" fxLayoutAlign="center center" fxLayout.xs="column">
+            <span fxFlex="20%" fxFlex.lt-md="40%" class="title">PLACA:</span>
+            <span fxFlex="25%" fxFlex.lt-md="50%" class="content">{{ dataTest.placa }}</span>
+            <span fxFlex="20%" fxFlex.lt-md="40%" class="title">VEÍCULO:</span>
+            <span fxFlex="25%" fxFlex.lt-md="50%" class="content">{{ dataTest.modelo }}</span>
+            <span fxFlex="20%" fxFlex.lt-md="40%" class="title">ANO/MODELO:</span>
+            <span fxFlex="25%" fxFlex.lt-md="50%" class="content">{{ dataTest.ano_fabricacao }} / {{ dataTest.ano_modelo }}</span>
+            <span fxFlex="20%" fxFlex.lt-md="40%" class="title">KM:</span>
+            <span fxFlex="25%" fxFlex.lt-md="50%" class="content">{{ dataTest.km_atual }}</span>
+            <span fxFlex="20%" fxFlex.lt-md="40%" class="title">VL FIPE:</span>
+            <span fxFlex="25%" fxFlex.lt-md="50%" class="content">{{ dataTest.valor_mercado * 1.15 | number:'5.2-2' }}</span>
+            <span fxFlex="20%" fxFlex.lt-md="40%" class="title">MERCADO:</span>
+            <span fxFlex="25%" fxFlex.lt-md="50%" class="content">{{ dataTest.valor_mercado }}</span>
+        </div>
+      </div>
+    </mat-card>
+
+    <mat-card class="card">
+        <mat-card-header>
+            <mat-card-title>
+                <h2>Gastos do Veículo</h2>
+              </mat-card-title>
+        </mat-card-header>
+        <div fxLayout="column" fxLayoutAlign="center center">
+          <div fxFlex="100%" fxLayout="row wrap" fxLayoutAlign="center center" fxLayout.xs="column">
+              <span fxFlex="20%" fxFlex.lt-md="40%" class="title">PREVENTIVA:</span>
+              <span fxFlex="25%" fxFlex.lt-md="50%" class="content">{{ dataTest.peventiva }}</span>
+              <span fxFlex="20%" fxFlex.lt-md="40%" class="title">CORRETIVA:</span>
+              <span fxFlex="25%" fxFlex.lt-md="50%" class="content">{{ dataTest.corretiva }}</span>
+              <span fxFlex="20%" fxFlex.lt-md="40%" class="title">SINISTRO:</span>
+              <span fxFlex="25%" fxFlex.lt-md="50%" class="content">{{ dataTest.sinistro }} / {{ dataTest.ano_modelo }}</span>
+              <span fxFlex="20%" fxFlex.lt-md="40%" class="title">OUTROS:</span>
+              <span fxFlex="25%" fxFlex.lt-md="50%" class="content">{{ dataTest.outros }}</span>
+              <span fxFlex="20%" fxFlex.lt-md="40%" class="title total">SUBTOTAL:</span>
+              <span fxFlex="25%" fxFlex.lt-md="50%" class="content total">{{ manutTotal }}</span>
+              <span fxFlex="20%" fxFlex.lt-md="40%" class="title">GESTÃO:</span>
+              <span fxFlex="25%" fxFlex.lt-md="50%" class="content">{{ dataTest.gestao }}</span>
+              <span fxFlex="35%" fxFlex.lt-md="40%" class="title total final">TOTAL:</span>
+              <span fxFlex="60%" fxFlex.lt-md="50%" class="content total final">{{ totalGeral | number:'5.2-2' }}</span>
+              <h1 class="last-os">ÚLTIMA INTERVENÇÃO</h1>
+              <div fxFlex="100%" fxLayout="row wrap" fxLayoutAlign="center center" fxLayout.xs="column">
+                  <p fxFlex="19%" fxFlex.lt-md="45%"><span class="title centered">nº OS</span><br><span class="content">{{ dataTest.ultima_os.seqos }}</span></p>
+                  <p fxFlex="19%" fxFlex.lt-md="45%"><span class="title centered">Data</span><br><span class="content">{{ dataTest.ultima_os.data }}</span></p>
+                  <p fxFlex="19%" fxFlex.lt-md="45%"><span class="title centered">Km</span><br><span class="content">{{ dataTest.ultima_os.km }}</span></p>
+                  <p fxFlex="19%" fxFlex.lt-md="45%"><span class="title centered">Valor (R$)</span><br><span class="content">{{ dataTest.ultima_os.valor }}</span></p>
+                  <p fxFlex="19%" fxFlex.lt-md="90%"><span class="title centered">Motivo</span><br><span class="content">{{ dataTest.ultima_os.motivo }}</span></p>
+              </div>
+              <h1 class="last-os">ÚLTIMAS OSs PREVENTIVAS</h1>
+              <div fxFlex="100%" fxLayout="row wrap" fxLayoutAlign="center center" fxLayout.xs="column">
+                  <p fxFlex="19%" fxFlex.lt-md="45%"><span class="title">nº OS</span><br><span class="content">{{ dataTest.ultimas_prev[0].seqos }}</span>
+                                                                                     <br><span class="content">{{ dataTest.ultimas_prev[1].seqos }}</span>
+                                                                                     <br><span class="content">{{ dataTest.ultimas_prev[2].seqos }}</span></p>
+                  <p fxFlex="19%" fxFlex.lt-md="45%"><span class="title">Data</span><br><span class="content">{{ dataTest.ultimas_prev[0].data }}</span>
+                                                                                     <br><span class="content">{{ dataTest.ultimas_prev[1].data }}</span>
+                                                                                     <br><span class="content">{{ dataTest.ultimas_prev[2].data }}</span></p>
+                  <p fxFlex="19%" fxFlex.lt-md="45%"><span class="title">Km</span><br><span class="content">{{ dataTest.ultimas_prev[0].km }}</span>
+                                                                                  <br><span class="content">{{ dataTest.ultimas_prev[1].km }}</span>
+                                                                                  <br><span class="content">{{ dataTest.ultimas_prev[2].km }}</span></p>
+                  <p fxFlex="19%" fxFlex.lt-md="45%"><span class="title">Valor (R$)</span><br><span class="content">{{ dataTest.ultimas_prev[0].valor }}</span>
+                                                                                          <br><span class="content">{{ dataTest.ultimas_prev[1].valor }}</span>
+                                                                                          <br><span class="content">{{ dataTest.ultimas_prev[2].valor }}</span></p>
+              </div>
+          </div>
+        </div>
+    </mat-card>
+
+    <mat-card class="card">
+      <mat-card-header>
+          <mat-card-title>
+              <h2>Comentários</h2>
+            </mat-card-title>
+      </mat-card-header>
+      <div fxLayout="column" fxLayoutAlign="center center">
+        <div fxFlex="100%" fxLayout="row wrap" fxLayoutAlign="center center" fxLayout.xs="column">
+            <h1 class="last-os">PARAMETROS PARA O ESTUDO</h1>
+            <ul>
+              <li class="coments">Quilometragem atual: {{ dataTest.km_atual }} (troca recomendada a partir de 120.000 km). </li>
+              <li class="coments">Veículo disponível {{ dataTest.idf * 100 }}% do tempo (disponibilidade ideal acima de 90%) (troca recomendada a partir de 120.000 km). </li>
+              <li class="coments">Gastos com Manutenção no período: R$ {{ manutTotal }} (substituição recomendada quando o valor estiver
+                   próximo ao valor de mercado R$ {{ dataTest.valor_mercado }}, que foi calculado 15% abaixo do valor FIPE). </li>
+              <li class="coments">O estudo de Frota mostra o Ponto Ideal de Troda do veículo igual a {{ pontoIdealdeTroca }}.
+                  Acima de 0,90 o veículo deverá ser substituido e quando estiver entre 0,75 e 0,89 as próximas manutenções
+                  deverão ser acompanhadas.</li>
+            </ul>
+
+            <h1 class="last-os">COMENTÁRIOS</h1>
+            <div fxFlex="100%" fxLayout="row wrap" fxLayoutAlign="center center" fxLayout.xs="column">
+                <p *ngIf="pontoIdealdeTroca >= 0.9" class="coments">A TFLEET RECOMENDA A SUBSTITUIÇÃO DO VEÍCULO</p>
+                <p *ngIf="pontoIdealdeTroca >= 0.75 && pontoIdealdeTroca < 0.9" class="coments">A TFLEET RECOMENDA O ACOMPANHAMENTO DAS PRÓXIMAS MANUTENÇÕES DO VEÍCULO</p>
+                <p *ngIf="pontoIdealdeTroca < 0.75" class="coments">A TFLEET RECOMENDA MANTER VEÍCULO</p>
+            </div>
+        </div>
+      </div>
+  </mat-card>
+
+
+
+
+
+</mat-card>
+
+<mat-card *ngIf="show === 2" class="centered alert card">
+    <p><span>Ocorreu algum erro durante a consulta. Verifique se a placa está cadastrada corretamente na base e tente novamente.<br>
+              Se o problema persistir, entre em contato conosco.</span></p>
+</mat-card>
